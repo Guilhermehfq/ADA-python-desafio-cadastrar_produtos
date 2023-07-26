@@ -1,4 +1,6 @@
-def cadastre_produto(nome, quantidade, descricao):
+produtos = {}
+
+def cadastre_produto(produtos):
   """Essa função cadastra um novo produto com os campos:
     - nome do produto (obrigatório)
     - quantidade (opcional)
@@ -6,6 +8,14 @@ def cadastre_produto(nome, quantidade, descricao):
     - outros campos
     Ps: o nome do produto é único, logo podemos pensar como uma chave única
   """
+  nome = input('Qual o nome do produto para cadastrar? ')
+  quantidade = input('Qual a quantidade para cadastrar? ')
+  if quantidade == '':
+    quantidade = 0
+  else:
+    quantidade = int(quantidade)
+  descricao = input('Qual a descrição do produto para cadastrar? ')
+
   produto = {
     "nome": nome,
     "quantidade": quantidade,
@@ -74,12 +84,12 @@ def consulte_quantidade(produtos):
   for item in produtos:
     print(produtos[item], produtos[item].value('quantidades'))
 
-def consulte_descricao_produto():
+def consulte_descricao_produto(produtos):
   """ Essa função mostra a descrição e as Informações adicionais de um dado produto
   """
 
 
-def ative_sistema(nome, quantidade, descricao):
+def ative_sistema(produtos):
   """ Essa função aceita as interações do usuário, coordenando qual ação deve ser tomada
       Cada ação refere-se as funções desenvolvidas acima.
       Nota: o que fazer se for inserida uma ação inválida?
@@ -98,19 +108,22 @@ def ative_sistema(nome, quantidade, descricao):
       7. Fechar o programa
       """
     )
-    if escolha == 1:
-      cadastre_produto(nome, quantidade=0, descricao='')
-    elif escolha == 2:
+    if escolha == '1':
+      cadastre_produto(produtos)
+    elif escolha == '2':
       pass
-    elif escolha == 3:
+    elif escolha == '3':
       pass
-    elif escolha == 4:
+    elif escolha == '4':
       pass
-    elif escolha == 5:
+    elif escolha == '5':
+      consulte_produtos(produtos)
+    elif escolha == '6':
       pass
-    elif escolha == 6:
-      pass
-    elif escolha == 7:
+    elif escolha == '7':
       pass
     else:
       pass
+
+
+ative_sistema(produtos)

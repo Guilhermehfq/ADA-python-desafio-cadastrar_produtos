@@ -75,14 +75,15 @@ def consulte_produtos(produtos):
   """ Essa função mostra os produtos disponíveis no sistema (somente nome)
   """
   print('O produtos disponiveis são:')
-  print(produtos.keys())
+  for keys, valores in produtos.items():
+    print(keys)
 
 def consulte_quantidade(produtos):
   """ Essa função mostra os produtos e a quantidade disponíveis no sistema
   """
   print('O produtos e quantidades disponiveis são:')
-  for item in produtos:
-    print(produtos[item], produtos[item].value('quantidades'))
+  for chave, valor in produtos.items():
+    print(f'{chave} -> {valor["quantidade"]} itens')
 
 def consulte_descricao_produto(produtos):
   """ Essa função mostra a descrição e as Informações adicionais de um dado produto

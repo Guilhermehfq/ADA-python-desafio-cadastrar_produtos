@@ -80,6 +80,8 @@ def remova_produto_estoque(produtos):
         print('Não é possivel ter estoque negativo, favor verificar a quantidade de itens retirados')
     else:
       print('Não é aceito quantidades negativas')
+  else:
+    print('O produto não existe')
   return produtos
 
 def consulte_produtos(produtos):
@@ -125,6 +127,7 @@ Escolha uma das funções:
 6. Produtos e quantidade disponível
 7. Consultar a descrição de um produto específico
 8. Fechar o programa
+
 """
     )
     if escolha == '1':
